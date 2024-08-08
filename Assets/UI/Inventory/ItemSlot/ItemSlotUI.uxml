@@ -1,0 +1,14 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement name="border" data-source-type="ItemSlot, Assembly-CSharp" style="flex-grow: 1; border-top-width: 4px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); position: relative;">
+        <engine:VisualElement name="itemSlotBody" enabled="true" style="flex-grow: 1;">
+            <engine:Label text="0" style="font-size: 35px; -unity-font-style: bold; align-items: flex-end; justify-content: flex-end; align-self: flex-end; align-content: flex-end; flex-grow: 1; flex-shrink: 1; -unity-text-align: lower-right; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: 5px; margin-bottom: 0; margin-left: 0;">
+                <Bindings>
+                    <engine:DataBinding property="text" data-source-path="_ItemSetk__BackingField._Countk__BackingField" binding-mode="ToTarget" />
+                </Bindings>
+            </engine:Label>
+            <Bindings>
+                <engine:DataBinding property="style.backgroundImage" data-source-path="_ItemSetk__BackingField._Itemk__BackingField._Imagek__BackingField" binding-mode="ToTarget" />
+            </Bindings>
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>

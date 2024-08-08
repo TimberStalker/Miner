@@ -1,0 +1,7 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement name="inventoryContainer" data-source="project://database/Assets/UI/UIModels/InventoryUIModel.asset?fileID=11400000&amp;guid=d212b8d85b4fa6b4f933fe6de529a01e&amp;type=2#InventoryUIModel" style="flex-grow: 1;">
+        <engine:VisualElement name="body" style="flex-grow: 1;">
+            <engine:ListView item-template="project://database/Assets/UI/Inventory/ItemSlot/ItemSlotUI.uxml?fileID=9197481963319205126&amp;guid=3af5674169ce36d42914fd76ca96e0d6&amp;type=3#ItemSlotUI" allow-add="false" allow-remove="false" selection-type="None" style="flex-grow: 1;" />
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>
