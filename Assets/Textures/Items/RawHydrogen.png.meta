@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RawHydrogen_0: 3205840356580876424
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
