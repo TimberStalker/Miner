@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Smelter
   m_EditorClassIdentifier: 
   <Texture>k__BackingField: {fileID: 0}
-  <Template>k__BackingField: {fileID: 2157256661453956675, guid: 69d1d81f2042f5f4e991911feb280c90, type: 3}
+  <Item>k__BackingField: {fileID: 11400000, guid: dc5e2a5f83551f5408db4f0156e58d50, type: 2}
+  <Template>k__BackingField: {fileID: 8503952446059395208, guid: 69d1d81f2042f5f4e991911feb280c90, type: 3}
   <Size>k__BackingField: {x: 3, y: 3}
   <CenterOffset>k__BackingField: {x: 1, y: 1}
+  <AlowedLayers>k__BackingField: -1
   <CustomShape>k__BackingField: 0
   <CustomIncludeExclude>k__BackingField: []

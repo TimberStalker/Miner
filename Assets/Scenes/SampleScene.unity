@@ -128,7 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 35318426}
   - component: {fileID: 35318427}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,6 +619,7 @@ GameObject:
   - component: {fileID: 435893683}
   - component: {fileID: 435893682}
   - component: {fileID: 435893684}
+  - component: {fileID: 435893685}
   m_Layer: 8
   m_Name: Grid
   m_TagString: Untagged
@@ -731,6 +732,18 @@ MonoBehaviour:
       <Y>k__BackingField: 0
       <Layer>k__BackingField: 0
     <Building>k__BackingField: {fileID: 11400000, guid: d7fec22565cd89848bdd53802b13efe6, type: 2}
+--- !u!114 &435893685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435893679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2f1c37a47fa05a47977f7ad1308bcca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,7 +1164,7 @@ GameObject:
   - component: {fileID: 657502804}
   - component: {fileID: 657502806}
   - component: {fileID: 657502805}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpecialDigParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5983,7 +5996,7 @@ GameObject:
   m_Component:
   - component: {fileID: 731860487}
   - component: {fileID: 731860488}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Resoruce Mine Ping
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6112,7 +6125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 746778131}
   - component: {fileID: 746778132}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Triangle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6362,7 +6375,7 @@ GameObject:
   - component: {fileID: 919364010}
   - component: {fileID: 919364012}
   - component: {fileID: 919364011}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DigParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11419,7 +11432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1335514161}
   - component: {fileID: 1335514162}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Drill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11594,7 +11607,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1380092949}
   - component: {fileID: 1380092950}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Triangle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11749,7 +11762,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1415749462}
   - component: {fileID: 1415749463}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DrillEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11922,7 +11935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1437490830}
   - component: {fileID: 1437490831}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12010,7 +12023,7 @@ GameObject:
   - component: {fileID: 1448066036}
   - component: {fileID: 1448066038}
   - component: {fileID: 1448066037}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17012,7 +17025,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1609576213}
   - component: {fileID: 1609576214}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DrillCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17089,7 +17102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1662883668}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17223,7 +17236,7 @@ GameObject:
   - component: {fileID: 1850600447}
   - component: {fileID: 1850600444}
   - component: {fileID: 1850600445}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17662,7 +17675,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1913755481}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17728,7 +17741,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2103262342}
   - component: {fileID: 2103262343}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17815,7 +17828,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2104677063}
   - component: {fileID: 2104677064}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DrillStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}

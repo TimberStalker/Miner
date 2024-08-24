@@ -12,18 +12,18 @@ public class BuildingGrid : MonoBehaviour
     [field: SerializeField] public GridLayer ChunkPrefab { get; private set; }
 
     new Rigidbody2D rigidbody;
-    Grid grid;
+    public Grid Grid { get; private set; }
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        grid = GetComponent<Grid>();
+        Grid = GetComponent<Grid>();
     }
 
-    public bool CanPlaceBuilding(in GridPosition position, Building building)
+    public bool CanPlaceBuilding(GridPosition position, Building building)
     {
         var positions = building.GetPositions();
         var layer = GetOrCreateLayer(position.Layer);
-        if (positions.Any(p => layer.Layer.ContainsBuilding(p)))
+        if (positions.Any(p => layer.Layer.ContainsBuilding(p + position)))
         {
             return false;
         }
@@ -43,16 +43,37 @@ public class BuildingGrid : MonoBehaviour
         var layer = GetOrCreateLayer(position.Layer).Layer;
 
         var blockInstance = Instantiate(building.Template, layer.transform);
+
+        var placeable = new Placeable(blockInstance, building, position);
+        
         blockInstance.transform.localPosition = new Vector3(position.X, position.Y, 0);
         blockInstance.transform.localRotation = Quaternion.identity;
 
 
         foreach(var blockLocalposition in building.GetPositions())
         {
-            layer.PlaceBuildingAt(blockLocalposition + position, blockInstance);
+            layer.PlaceBuildingAt(blockLocalposition + position, placeable);
         }
 
         return true;
+    }
+
+    public Building RemoveBuilding(in GridPosition position)
+    {
+        Debug.Log($"Removing Building At ({position.X}, {position.Y}) [{position.Layer}]");
+        var layer = GetOrCreateLayer(position.Layer).Layer;
+
+        var placeable = layer.GetBuilding(position);
+        if (placeable == null) return null;
+
+        foreach (var blockLocalposition in placeable.Building.GetPositions())
+        {
+            layer.ClearTile(blockLocalposition + placeable.CenterTile);
+        }
+        var building = placeable.Building;
+        Destroy(placeable.Object);
+
+        return building;
     }
 
     public LayerNode GetLayer(int position)
@@ -65,9 +86,11 @@ public class BuildingGrid : MonoBehaviour
         if(layer.Layer == null)
         {
             layer = new LayerNode(Instantiate(ChunkPrefab, transform), position);
+            Layers.Add(layer);
         }
         return layer;
     }
+
     public struct LayerNode
     {
         public GridLayer Layer { get; }

@@ -13,3 +13,10 @@ MonoBehaviour:
   m_Name: Cannon
   m_EditorClassIdentifier: 
   <Texture>k__BackingField: {fileID: 0}
+  <Item>k__BackingField: {fileID: 0}
+  <Template>k__BackingField: {fileID: 0}
+  <Size>k__BackingField: {x: 1, y: 1}
+  <CenterOffset>k__BackingField: {x: 0, y: 0}
+  <AlowedLayers>k__BackingField: -1
+  <CustomShape>k__BackingField: 0
+  <CustomIncludeExclude>k__BackingField: []

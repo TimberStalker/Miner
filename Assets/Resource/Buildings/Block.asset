@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Block
   m_EditorClassIdentifier: 
   <Texture>k__BackingField: {fileID: 2800000, guid: a05734ed04cfc094c9cf626ad78f4d89, type: 3}
-  <Template>k__BackingField: {fileID: 2157256661453956675, guid: 3cf0ef8789e09354a9dc90fd12d614f7, type: 3}
+  <Item>k__BackingField: {fileID: 11400000, guid: 5da407f88c31e1d46af4ae594177b52a, type: 2}
+  <Template>k__BackingField: {fileID: 8503952446059395208, guid: 3cf0ef8789e09354a9dc90fd12d614f7, type: 3}
   <Size>k__BackingField: {x: 1, y: 1}
   <CenterOffset>k__BackingField: {x: 0, y: 0}
+  <AlowedLayers>k__BackingField: -1
   <CustomShape>k__BackingField: 0
   <CustomIncludeExclude>k__BackingField: []

@@ -96,7 +96,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4734688474974865364}
-  - component: {fileID: 2157256661453956675}
   m_Layer: 8
   m_Name: Smelter
   m_TagString: Untagged
@@ -120,16 +119,3 @@ Transform:
   - {fileID: 8903040025468983107}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2157256661453956675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8503952446059395208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbd594331dbef8343a2005710aee47ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Building>k__BackingField: {fileID: 11400000, guid: d7fec22565cd89848bdd53802b13efe6, type: 2}

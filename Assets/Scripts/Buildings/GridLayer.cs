@@ -24,6 +24,11 @@ public class GridLayer : MonoBehaviour
     {
         return tiles.Any(t => t.Position == new Vector2Int(x, y));
     }
+    public Placeable GetBuilding(Vector2Int position) => GetBuilding(position.x, position.y);
+    public Placeable GetBuilding(int x, int y)
+    {
+        return tiles.FirstOrDefault(t => t.Position == new Vector2Int(x, y)).Placeable;
+    }
     public void PlaceBuildingAt(Vector2Int position, Placeable placeable)
     {
         if (ContainsBuilding(position))

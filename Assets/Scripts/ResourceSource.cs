@@ -26,8 +26,20 @@ public class ResourceSource : MineableObject
         //};
     }
 
-    public override ItemGroup GetDrillItems()
+    //public override ItemGroup GetDrillItems()
+    //{
+    //    return new ItemGroup(new ItemSet() { Item = Resource, Count = Mathf.CeilToInt(ResourceDensity) });
+    //}
+
+    protected override DigResult DigInternal(DigSettings drillInfo, DrillProgress progress)
     {
-        return new ItemGroup(new ItemSet() { Item = Resource, Count = Mathf.CeilToInt(ResourceDensity) });
+        progress.Progress += drillInfo.DigPower * Time.fixedDeltaTime;
+        ItemGroup items = null;
+        if (progress.Progress > 1)
+        {
+            progress.Progress = 0;
+            items = new ItemGroup(new ItemSet() { Item = Resource, Count = Mathf.CeilToInt(ResourceDensity) });
+        }
+        return new DigResult(progress, Random.Range(0f, 1f) > .9f, items);
     }
 }

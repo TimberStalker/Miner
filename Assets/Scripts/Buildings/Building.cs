@@ -6,7 +6,8 @@ using UnityEngine;
 public class Building : ScriptableObject
 {
     [field: SerializeField] public Texture2D Texture { get; private set; }
-    [field: SerializeField] public Placeable Template { get; private set; }
+    [field: SerializeField] public Item Item { get; private set; }
+    [field: SerializeField] public GameObject Template { get; private set; }
     [field: SerializeField] public Vector2Int Size { get; private set; } = Vector2Int.one;
     [field: SerializeField] public Vector2Int CenterOffset { get; private set; } = Vector2Int.zero;
     [field: SerializeField] public Layer AlowedLayers { get; private set; } = Layer.Main;

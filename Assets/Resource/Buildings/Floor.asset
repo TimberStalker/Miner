@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Floor
   m_EditorClassIdentifier: 
   <Texture>k__BackingField: {fileID: 2800000, guid: 728fdc420b98e004a9531c51a2380a1d, type: 3}
-  <Template>k__BackingField: {fileID: 2157256661453956675, guid: be28d1cab5f328c43822b368dbc321cd, type: 3}
+  <Item>k__BackingField: {fileID: 0}
+  <Template>k__BackingField: {fileID: 8503952446059395208, guid: be28d1cab5f328c43822b368dbc321cd, type: 3}
   <Size>k__BackingField: {x: 1, y: 1}
   <CenterOffset>k__BackingField: {x: 0, y: 0}
+  <AlowedLayers>k__BackingField: -1
   <CustomShape>k__BackingField: 0
   <CustomIncludeExclude>k__BackingField: []

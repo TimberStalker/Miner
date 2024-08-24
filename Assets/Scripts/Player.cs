@@ -251,10 +251,11 @@ public class Player : MonoBehaviour
     }
 
     float nextImpactTime;
-    float drillTimer;
+    //float drillTimer;
     float quickTurnBufferTime;
     Vector2 digPoint;
-    MineableObject lastDugResource;
+    //MineableObject lastDugResource;
+    DrillProgress drillProgress;
     private void Drill()
     {
         List<Collider2D> hits = new();
@@ -271,47 +272,38 @@ public class Player : MonoBehaviour
         {
             if (hit.attachedRigidbody is null) continue;
             var resourceSource = hit.attachedRigidbody.gameObject.GetComponent<MineableObject>();
-            if (resourceSource != null)
+            if (resourceSource == null) continue;
+             
+            if(!digging)
             {
-                if(!digging)
-                {
-                    digging = true;
-                    OnDigStart.Invoke();
-                }
-                OnDig.Invoke();
-                drillTimer += Time.deltaTime;
+                digging = true;
+                OnDigStart.Invoke();
+            }
+            OnDig.Invoke();
+            digPoint = Physics2D.ClosestPoint(Position, hit);
+            Debug.DrawLine(transform.position, new Vector3(digPoint.x, digPoint.y, transform.position.z), Color.green);
+            var drillResult = resourceSource.Dig(new DigSettings(1, digPoint, rigidbody.rotation), drillProgress);
+            drillProgress = drillResult.Progress;
+            if(drillResult.ItemTransfer != null)
+            {
+                OnMinedResource.Invoke();
+                inventory.Add(drillResult.ItemTransfer);
+            }
 
-                if (lastDugResource != resourceSource)
+            if (moveInput < epsilon)
+            {
+                if (rigidbody.linearVelocity.magnitude < maxRegectionSpeed)
                 {
-                    lastDugResource = resourceSource;
-                    drillTimer = 0;
+                    rigidbody.AddForce((Position - digPoint).normalized * regectionForce, ForceMode2D.Force);
                 }
-
-                if (drillTimer > 1)
+            }
+            else
+            {
+                if (drillResult.Impact && nextImpactTime < Time.fixedTime)
                 {
-                    drillTimer = 0;
-                    OnMinedResource.Invoke();
-                    inventory.Add(resourceSource.GetDrillItems());
-                    //inventory.Add(new ItemSet() { Item = resourceSource.Resource, Count = Mathf.CeilToInt(resourceSource.ResourceDensity) });
-                }
-
-                digPoint = Physics2D.ClosestPoint(Position, hit);
-                Debug.DrawLine(transform.position, new Vector3(digPoint.x, digPoint.y, transform.position.z), Color.green);
-                if (moveInput < epsilon)
-                {
-                    if (rigidbody.linearVelocity.magnitude < maxRegectionSpeed)
-                    {
-                        rigidbody.AddForce((Position - digPoint).normalized * regectionForce, ForceMode2D.Force);
-                    }
-                }
-                else
-                {
-                    if (nextImpactTime < Time.fixedTime && Random.Range(0f, 1f) > .9f)
-                    {
-                        nextImpactTime = Time.fixedTime + impactTimout;
-                        OnImpact.Invoke();
-                        rigidbody.AddForce((Position - digPoint).normalized * impactForce, ForceMode2D.Impulse);
-                    }
+                    nextImpactTime = Time.fixedTime + impactTimout;
+                    OnImpact.Invoke();
+                    rigidbody.AddForce((Position - digPoint).normalized * impactForce, ForceMode2D.Impulse);
                 }
             }
         }
@@ -331,6 +323,7 @@ public class Player : MonoBehaviour
     private void OnGUI()
     {
         GUILayout.Space(40);
+        GUILayout.Label(@$"Dig: {digPoint}");
         GUILayout.Label(@$"Speed: {rigidbody.linearVelocity.magnitude.ToString("0.00")}");
         GUILayout.Label(@$"Spin: {rigidbody.angularVelocity.ToString("0.00")}");
         scroll1Position = GUILayout.BeginScrollView(scroll1Position);
